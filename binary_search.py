@@ -10,23 +10,27 @@ binary search
 def binary_search(list_in, item):
     low = 0                      # В переменных low и high хранятся границы
     high = len(list_in) - 1      # той части списка, в которой выполняется поиск
-
+    count = 0
     while low <= high:           # Пока эта часть не сократится до одного элемента..
+
         mid = (low + high) // 2  # ...проверяем средний элемент (отбрасываем дробную часть)
         print('mid=', mid)
         guess = list_in[mid]
         print('guess=', guess)
         if guess == item:        # Значение найдено
-            return mid
+            return mid, 'Всего итераций (проверок): ' + str(count)
         elif guess > item:       # Много
             high = mid - 1
+            count += 1
         else:                    # Мало
             low = mid + 1
-    return None                  # Значение не существует
+            count += 1
+        # print('Всего итерация:', count)
+    return None, 'Всего итераций (проверок): ' + str(count)  # Значение не существует
 
 
-my_list = [1, 2, 4, 6, 7, 9]
-print(binary_search(my_list, 7))
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+print(binary_search(my_list, -1))
 
 """
 Упраженение 1.1
