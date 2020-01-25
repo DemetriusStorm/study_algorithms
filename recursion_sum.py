@@ -19,7 +19,7 @@ def count_list(list_of_element):
         return result
 
 
-print('count_list', count_list([2, 4, 6, 8, 3, 5, 7, 9, 1]))
+# print('count_list', count_list([2, 4, 6, 8, 3, 5, 7, 9, 1]))
 
 lists = [2, 4, 6, 8, 3, 5, 7, 9, 1]
 print(lists[0], lists[1])
